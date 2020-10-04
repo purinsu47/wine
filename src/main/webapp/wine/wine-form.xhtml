@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="../layout.xhtml">
+
+	<ui:define name="content">
+		<h:form id="wineForm">
+			<p:panel header="Wine Details">
+				<h:panelGrid columns="1">
+					<p:outputLabel for="lotCode" value="Lot Code: " />
+					<p:inputText id="lotCode" value="#{wineController.wine.lotCode}" />
+
+					<p:outputLabel for="volume" value="Volume: " />
+					<p:inputNumber id="volume" value="#{wineController.wine.volume}" />
+
+					<p:outputLabel for="description" value="Description: " />
+					<p:inputText id="description"
+						value="#{wineController.wine.description}" />
+
+					<p:outputLabel for="tankCode" value="TankCode: " />
+					<p:inputText id="tankCode" value="#{wineController.wine.tankCode}" />
+
+					<p:outputLabel for="productState" value="Product State " />
+					<p:inputText id="productState"
+						value="#{wineController.wine.productState}" />
+
+					<p:outputLabel for="ownerName" value="Owner Name: " />
+					<p:inputText id="ownerName"
+						value="#{wineController.wine.ownerName}" />
+
+
+					<h:commandButton value="Save" action="#{wineController.save}" />
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>
